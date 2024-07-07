@@ -1,9 +1,9 @@
 ! Title: UBO Lite Private
 ! Version: 7july2024
-! Expires:
+! Expires: 7 days
 ! Description: Testing
 ! Homepage: https://github.com/BoxBoxmari/UBO-private
-! Homepage for the repository: https://github.com/BoxBoxmari/UBO-private
+! Homepage for the repository: https://raw.githubusercontent.com/BoxBoxmari/UBO-private/main/UBO%20Lite%20Private
 
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.web_enable_ab_rsp_cl, false)
@@ -85,4 +85,3 @@ www.studocu.com##[style*="blur"]:style(filter:none!important;)
 ||cloudfront.net/*/blurred$uritransform=/\/blurred//,from=studocu.com
 /blurred$uritransform=/\/blurred//,from=studocu.com,to=cloudfront.net|studocu.com
 studocu.com##.page-content:style(filter: none !important; -webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;)
-
