@@ -1,0 +1,88 @@
+! Title: UBO Lite Private
+! Version: 7july2024
+! Expires:
+! Description: Testing
+! Homepage: https://github.com/BoxBoxmari/UBO-private
+! Homepage for the repository: https://github.com/BoxBoxmari/UBO-private
+
+www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
+www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.web_enable_ab_rsp_cl, false)
+www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.ab_pl_man, false)
+||googlevideo.com/videoplayback$xhr,3p,method=get,domain=www.youtube.com
+
+youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false)
+youtube.com##+js(set, Object.prototype.adBlocksFound, 0)
+youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, [])
+youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, true)
+youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false)
+youtube.com##+js(set, Object.prototype.adBlocksFound, 0)
+youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, [])
+youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, true)
+
+www.youtube.com##.html5-endscreen-content
+www.youtube.com##.html5-endscreen
+www.youtube.com##.ytp-ce-element
+
+! Warning: This will break push notifications
+www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.service_worker_enabled, false)
+
+! Removes the "new" badges, also makes the video limiter more reliable
+youtube.com##ytd-badge-supported-renderer
+
+! Removes discovery
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(3)
+youtube.com##ytd-rich-grid-row > #contents:style(display: contents !important;)
+
+m.youtube.com,music.youtube.com,www.youtube.com#@#+js(trusted-rpnt, script, /^(\(function serverContract\(\))/s, /*start*/(function(){const wrapper=(target\,argumentsList\,newTarget)=>{const result=Reflect.construct(target\,argumentsList\,newTarget);try{const decoded=(new TextDecoder).decode(result);if(decoded.includes("ssapPrerollEnabled")){const modifiedContent=decoded.replace(/\n.\n.playerConfig\.ssapConfig\.ssapPrerollEnabled.{2}(?:tru|fals)e/\,"");const modifiedUint8Array=(new TextEncoder).encode(modifiedContent);return modifiedUint8Array}}catch(e){}return result};const handler={construct:wrapper};window.Uint8Array=new Proxy(Uint8Array\,handler);document.currentScript.textContent=document.currentScript.textContent.replace(/\/\*start\*\/(.*)\/\*end\*\//g\,"")})();/*end*/$1)
+
+m.youtube.com,music.youtube.com,www.youtube.com##+js(trusted-rpnt, script, /^(\(function serverContract\(\))/s, /*start*/(function(){const wrapper=(target\,thisArg\,args)=>{let result=Reflect.apply(target\,thisArg\,args);try{const decoded=atob(result);if(decoded.includes("ssapPrerollEnabled")){const modifiedContent=decoded.replace(/\n.\n.playerConfig\.ssapConfig\.ssapPrerollEnabled.{2}(?:tru|fals)e/\,"");const encodeToBase64=btoa(modifiedContent);return encodeToBase64;}}catch(e){}return result;};const handler={apply:wrapper};window.Array.prototype.join=new Proxy(window.Array.prototype.join\,handler);document.currentScript.textContent=document.currentScript.textContent.replace(/\/\*start\*\/(.*)\/\*end\*\//g\,"");})();/*end*/$1)
+
+m.youtube.com,music.youtube.com,www.youtube.com##+js(trusted-rpnt, script, (function() {window.ytplayer=, /*start*/(()=>{let t=document.location.href\,e=[]\,n=[]\,o=!1;const r=Array.prototype.push\,i={apply:(t\,i\,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(o||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0\,n.length=0\,o=!0\,r.call(e\,a[0])\,r.call(n\,a[0].id))\,o&&0!==a[0]?.start&&!n.includes(a[0].id)&&(r.call(e\,a[0])\,r.call(n\,a[0].id)))\,Reflect.apply(t\,i\,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push\,i)\,document.addEventListener("DOMContentLoaded"\,(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const r=()=>{const t=document.querySelector("video");if(t&&e.length){const r=Math.round(t.duration)\,i=Math.round(e.at(-1).end/1e3);if(0===t.currentTime&&r&&r===i){const r=Math.ceil(e.at(-1).start/1e3);t.currentTime<r&&(t.currentTime=r\,o=!1\,e.length=0\,n.length=0)}}};r();new MutationObserver((()=>{t!==document.location.href?(t=document.location.href\,e.length=0\,n.length=0\,o=!1\,r()):r()})).observe(document\,{childList:!0\,subtree:!0})}))})();document.currentScript.textContent=document.currentScript.textContent.replace(/\/\*start\*\/(.*)\/\*end\*\//g\,"");/*end*/(function() {window.ytplayer=, sedCount, 1)
+m.youtube.com,music.youtube.com,www.youtube.com##+js(nano-stb, [native code], 17000, 0.001)
+
+! Homepage - distractions 
+youtube.com##ytd-rich-grid-row, ytd-rich-grid-row > #contents:style(display: contents !important;) 
+youtube.com###contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer, ytd-rich-grid-row, ytd-continuation-item-renderer)
+
+youtube.com##.ytp-button.ytp-cards-button
+
+youtube.com##ytd-popup-container > tp-yt-paper-dialog > ytd-mealbar-promo-renderer, ytd-popup-container > tp-yt-paper-dialog > yt-mealbar-promo-renderer:has-text(/Claim Offer|Join now|Not Now|No thanks|YouTube TV|live TV|Live TV|movies|sports|Try it free|unlimited DVR|watch NFL/)
+
+! YT Homepage and Subscriptions - Hide the Shorts section
+youtube.com##[is-shorts]
+! YT Menu - Hide the Shorts button
+www.youtube.com###guide [title="Shorts"], .ytd-mini-guide-entry-renderer[title="Shorts"]
+! YT Search - Hide Shorts
+www.youtube.com##ytd-search ytd-video-renderer:has([overlay-style="SHORTS"])
+! YT Search, Channels and Sidebar or below the player - Hide the Shorts sections
+www.youtube.com##ytd-reel-shelf-renderer
+! YT Channels - Hide the Shorts tab
+www.youtube.com##[tab-title="Shorts"]
+! YT Subscriptions - Hide Shorts - Grid View
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-grid-video-renderer:has([overlay-style="SHORTS"])
+! YT Subscriptions - Hide Shorts - List View
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer:has([overlay-style="SHORTS"])
+! YT Subscriptions - New Layout - Hide Shorts
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-rich-item-renderer:has([overlay-style="SHORTS"])
+! YT Sidebar - Hide Shorts
+www.youtube.com###related ytd-compact-video-renderer:has([overlay-style="SHORTS"])
+
+! YT Mobile - Hide the Shorts Menu button
+m.youtube.com##ytm-pivot-bar-item-renderer:has(>.pivot-shorts)
+! YT Mobile - Hide the Shorts sections
+m.youtube.com##ytm-reel-shelf-renderer
+! YT Mobile - Hide Shorts in search results
+m.youtube.com##ytm-search ytm-video-with-context-renderer:has([data-style="SHORTS"])
+! YT Mobile - Hide the Shorts button on Channels
+m.youtube.com##[tab-title="Shorts"]
+
+studocu.com###PURCHASE_HYBRID, .tm-backdrop, .fjs-tm-overflow-scroll
+studocu.com##.paywall:style(display: block !important;)
+
+www.studocu.com##._95f5f1767857
+www.studocu.com##._869f7c361ca9
+www.studocu.com##[style*="blur"]:style(filter:none!important;)
+||cloudfront.net/*/blurred$uritransform=/\/blurred//,from=studocu.com
+/blurred$uritransform=/\/blurred//,from=studocu.com,to=cloudfront.net|studocu.com
+studocu.com##.page-content:style(filter: none !important; -webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;)
+
