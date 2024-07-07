@@ -1,9 +1,9 @@
 ! Title: UBO Lite Private
 ! Version: 7july2024
-! Expires:
+! Expires: 
 ! Description: Testing
 ! Homepage: https://github.com/BoxBoxmari/UBO-private
-! Homepage for the repository: https://github.com/BoxBoxmari/UBO-private
+! Homepage for the repository: https://raw.githubusercontent.com/BoxBoxmari/UBO-private/main/UBO%20Lite%20Private
 
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.web_enable_ab_rsp_cl, false)
